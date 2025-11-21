@@ -66,19 +66,17 @@ php bin/phpunit
 ### How to Test Manually
 
 You can run the tests using PHPUnit:
-
-php bin/phpunit
+`php bin/phpunit`
 
 To test the API (if you run the server):
-
-curl -X POST http://localhost:8000/api/documents/123/publish
+`curl -X POST http://localhost:8000/api/documents/123/publish`
 
 Response:
-
 {
-
 "status": "success",
-
 "documentId": "123"
-
 }
+
+------
+
+Ps, hit the star button, and request for change if you have amelioration :)
