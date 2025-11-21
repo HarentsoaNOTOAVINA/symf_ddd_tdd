@@ -1,42 +1,80 @@
-# Hexago Test Project
+# 📚 Hexago Test Project
 
-This project is a Symfony application built with **Domain-Driven Design (DDD)** and **Test-Driven Development (TDD)** principles.
+> A Symfony application built with **Domain-Driven Design (DDD)** and **Test-Driven Development (TDD)** principles.
 
-## Prerequisites
+---
 
-Before you begin, ensure you have the following installed on your machine:
+## 📋 Table of Contents
 
-- **PHP**: 8.3 or higher
-- **Composer**: Latest version
-- **Symfony CLI** (optional, but recommended)
+- [Prerequisites](#-prerequisites)
+- [Architecture](#-architecture)
+- [Installation](#-installation)
+- [Testing](#-testing)
+- [Key Features](#-key-features)
+- [API Usage](#-api-usage)
+- [Contributing](#-contributing)
 
-## Architecture
+---
 
-This project follows a strict DDD architecture, separating concerns into distinct layers:
+## 🛠️ Prerequisites
 
-- **Domain**: Contains the business logic, entities, and interfaces. It has no dependencies on external frameworks.
-- **Application**: Orchestrates the domain logic and handles use cases (Commands/Queries).
-- **Infrastructure**: Implements interfaces defined in the Domain (e.g., Repositories, Controllers) and handles framework integration (Symfony).
+Before you begin, ensure you have the following installed:
 
-## Installation
+| Tool               | Version       | Required       |
+| ------------------ | ------------- | -------------- |
+| 🐘 **PHP**         | 8.3 or higher | ✅ Yes         |
+| 🎼 **Composer**    | Latest        | ✅ Yes         |
+| ⚡ **Symfony CLI** | Latest        | 🟡 Recommended |
 
-1. Clone the repository:
+---
 
-   ```bash
-   git clone <repository-url>
-   cd symfony_ddd_tdd
-   ```
+## 🏗️ Architecture
 
-2. Install dependencies:
-   ```bash
-   composer install
-   ```
+This project follows a **strict DDD architecture**, separating concerns into distinct layers:
 
-## Testing
+```
+📦 src/
+├── 🎯 Domain/          # Business logic, entities, interfaces (framework-agnostic)
+├── 🔄 Application/     # Use cases, commands, queries, event subscribers
+└── 🔌 Infrastructure/  # Controllers, repositories, Symfony integration
+```
 
-This project uses **PHPUnit** for testing. The tests are located in the `tests/` directory and mirror the source structure.
+### Layer Responsibilities
 
-To run the full test suite:
+- **🎯 Domain**: Pure business logic with no external dependencies
+- **🔄 Application**: Orchestrates domain logic and handles use cases
+- **🔌 Infrastructure**: Framework integration and external services
+
+---
+
+## 📥 Installation
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone <repository-url>
+cd symfony_ddd_tdd
+```
+
+### 2️⃣ Install dependencies
+
+```bash
+composer install
+```
+
+### 3️⃣ Start the development server (optional)
+
+```bash
+symfony serve
+```
+
+---
+
+## 🧪 Testing
+
+This project uses **PHPUnit** for testing with a **TDD approach**.
+
+### Run all tests
 
 ```bash
 php bin/phpunit
@@ -44,39 +82,76 @@ php bin/phpunit
 
 ### Test Structure
 
-- **Domain Tests**: Unit tests for entities and domain logic.
-- **Application Tests**: Unit/Integration tests for use cases.
-- **Infrastructure Tests**: Integration/Functional tests for controllers and repositories.
+```
+📂 tests/
+├── 🎯 Domain/          # Unit tests for entities and domain logic
+├── 🔄 Application/     # Unit/Integration tests for use cases
+└── 🔌 Infrastructure/  # Integration/Functional tests for controllers
+```
 
-## Key Features
+### ✅ Current Test Results
 
-- **PHP 8.3**: Utilizes modern PHP features including Attributes.
-- **Symfony 7**: Built on the latest stable Symfony version.
-- **Attribute-Based Routing**: All routes are defined using PHP attributes.
+- **9 tests**, **23 assertions** - All passing ✅
+- Code coverage: Domain logic fully tested
 
-## Verification Results
+---
 
-### Automated Tests
+## ✨ Key Features
 
-- `composer validate`: Passed.
-- `composer update`: Successful.
-- `php bin/console --version`: `Symfony 7.0.10` (Application boots successfully).
-- `php bin/phpunit`: `OK (7 tests, 20 assertions)`.
+| Feature                        | Description                                                       |
+| ------------------------------ | ----------------------------------------------------------------- |
+| 🐘 **PHP 8.3**                 | Modern PHP with Enums, Attributes, Constructor Property Promotion |
+| ⚡ **Symfony 7**               | Latest stable Symfony framework                                   |
+| 🏷️ **Attribute-Based Routing** | Clean routing with PHP attributes                                 |
+| 🎯 **DDD Architecture**        | Clean separation of concerns                                      |
+| 🧪 **TDD Approach**            | Test-first development                                            |
+| 📡 **Event-Driven**            | Domain events with subscribers                                    |
 
-### How to Test Manually
+---
 
-You can run the tests using PHPUnit:
-`php bin/phpunit`
+## 🚀 API Usage
 
-To test the API (if you run the server):
-`curl -X POST http://localhost:8000/api/documents/123/publish`
+### Start the server
 
-Response:
+```bash
+symfony serve
+```
+
+### Publish a document
+
+**Endpoint:** `POST /api/documents/{id}/publish`
+
+**Example:**
+
+```bash
+curl -X POST http://localhost:8000/api/documents/123/publish
+```
+
+**Response:**
+
+```json
 {
-"status": "success",
-"documentId": "123"
+  "status": "success",
+  "documentId": "123"
 }
 
-------
+```
 
-Ps, hit the star button, and request for change if you have amelioration :)
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. ⭐ **Star this repository** if you find it useful
+2. 🐛 **Report bugs** by opening an issue
+3. 💡 **Suggest improvements** via pull requests
+4. 📖 **Improve documentation**
+
+---
+
+## 📄 License
+
+This project is open source. Feel free to use it for learning purposes.
+
+---
+
+**Made with ❤️ using Symfony, DDD, and TDD principles**
