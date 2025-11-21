@@ -1,0 +1,17 @@
+PHPUnit 9.6.29 by Sebastian Bergmann and contributors.
+
+Testing 
+F......                                                             7 / 7 (100%)
+
+Time: 00:00.524, Memory: 14.00 MB
+
+There was 1 failure:
+
+1) App\Tests\Application\Document\PublishDocument\PublishDocumentHandlerTest::testCanPublishDocument
+App\Domain\Document\DocumentStatus Object (...) does not match expected type "string".
+
+C:\laragon\www\perso\hexago_test\tests\Application\Document\PublishDocument\PublishDocumentHandlerTest.php:41
+C:\laragon\www\perso\hexago_test\vendor\phpunit\phpunit\phpunit:107
+
+FAILURES!
+Tests: 7, Assertions: 18, Failures: 1.
